@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Əsas Səhifə</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <title>Smart home dashboardda istifade olunacaq model</title>
+
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+  
+  <section id="demos" class="invisible">
+
+    <br><br>
+    <div id="liveView" class="videoView">
+      <button id="webcamButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Başla</span>
+      </button>
+
+      <div style="position: relative;">
+        <video id="webcam" style="position: abso" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+      </div>
+    </div>
+    <div class="blend-shapes">
+      <ul class="blend-shapes-list" id="video-blend-shapes"></ul>
+    </div>
+  </section>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script type="module" src="index.js"></script>
+  <script>
+    setInterval(dec, 1000);
+function dec() {
+
+  var objarr = document.getElementsByClassName("card");
+  var listarr = document.getElementsByClassName("blend-shapes-label");
+  var scorearr = document.getElementsByClassName("blend-shapes-value");
+
+  var last = 0;
+  var dir = "";
+  for (let i = 0; i < listarr.length; i++) {
+    if (parseFloat(scorearr[i].textContent) > last && parseFloat(scorearr[i].textContent) > 0.5 ){
+      last = parseFloat(scorearr[i].textContent);
+      dir = listarr[i];
+    }
+    
+      
+  }
+  if(dir != ""){
+    fetch("https://final.syntheyesis.repl.co/api/dir/set?direction=" + dir.textContent);
+  }
+  
+  
+
+  return;
+}
+  </script>
+</body>
+
+</html>

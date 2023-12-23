@@ -1,0 +1,137 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #537FE7;
+}
+#webcam-container{
+    border-radius: 20px;
+    position: fixed;
+    justify-content: center;
+    top: 20px;
+    right: 20px;
+}
+#title {
+    font-weight: bold;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+}
+
+
+/* Existing styles... */
+
+.popup-slider {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensure content stays within the card */
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.slider-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    color: #000;
+}
+
+.button {
+    border-style: none;
+    background-color: #537FE7;
+    color: white;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 250px;
+    height: 200px;
+    background-color: #222222;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adjust shadow as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    border: none;
+    
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+    #titleimg{
+        width: 300px;
+    }
+}
