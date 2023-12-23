@@ -1,5 +1,5 @@
 
-![Logo](https://github.com/EminHaziyev/final/blob/main/vebsayt_elavesi/veb-sayt%20%C9%99lav%C9%99si/logo/128.png?raw=true)
+![Logo](https://github.com/EminHaziyev/final/blob/main/vebsayt_elavesi/logo/128.png?raw=true)
 
 
 # Syntheyesis
